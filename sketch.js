@@ -5,6 +5,13 @@ const Bodies = Matter.Bodies;
 var engine, world;
 var box1;
 
+var dustbin;
+
+function preload(){
+    dustbin=loadImage("dustbingreen.png");
+
+}
+
 function setup(){
     var canvas = createCanvas(1200,600);
     engine = Engine.create();
@@ -21,8 +28,12 @@ function setup(){
 }
 
 function draw(){
-    background(0);
+    background("white");
     Engine.update(engine);
+
+    imageMode(CENTER);
+    image(dustbin,800,530,210,110);
+
     box1.display();
     box2.display();
     box3.display();
